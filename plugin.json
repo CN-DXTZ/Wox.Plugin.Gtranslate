@@ -1,12 +1,12 @@
 {
-    "ID":"c342af6e-4e1c-4a5a-9e0c-e4efb9d1f05b",
-    "ActionKeyword":"gt",
-    "Name":"Gtranslate",
-    "Description":"谷歌英汉互译",
-    "Author":"CN-DXTZ",
-    "Version":"1.0",
-    "Language":"python",
-    "Website":"https://github.com/CN-DXTZ",
-    "IcoPath":"Images\\Gtranslate.png",
-    "ExecuteFileName":"Gtranslate.py"
+    "ID": "c342af6e4e1c4a5a9e0ce4efb9d1f05b",
+    "ActionKeyword": "tran",
+    "Name": "Gtranslate/谷歌翻译",
+    "Description": "Google Translate/谷歌英汉互译",
+    "Author": "CN-DXTZ",
+    "Version": "1.1.0",
+    "Language": "python",
+    "Website": "https://github.com/CN-DXTZ/Wox.Plugin.Gtranslate",
+    "IcoPath": "Images\\Gtranslate.png",
+    "ExecuteFileName": "Gtranslate.py"
 }

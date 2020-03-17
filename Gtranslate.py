@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from wox import Wox, WoxAPI
-from GoogleTranslate import GoogleTranslate
-import re
+from GoogleTranslate import GoogleTranslate, RecgLang
 import webbrowser
 try:
     import pyperclip
@@ -10,27 +9,24 @@ except ImportError:
     flag = False
 
 
-PREFIX_DICT = {"noun": "n", "verb": "v", "pronoun": "pron", "adjective": "adj",
-               "adverb": "adv", "numeral": "num", "article": "art",
-               "preposition": "prep", "conjunction": "conj", "interjection": "interj"}
-ITEM_MAX_LEN = 7
+DICT_PREFIX = {"noun": "n", "verb": "v", "pronoun": "pron", "adjective": "adj",
+               "adverb": "adv", "numeral": "num", "article": "art", "preposition": "prep",
+               "conjunction": "conj", "interjection": "interj", "abbreviation": "abbr"}
+ITEM_MAX_LEN = 10
 ICO_PATH = "Images/Gtranslate.png"
 
 
 class Gtranslate(Wox):
+    # 翻译请求
     def query(self, query):
-
-        # 判断语言（全英文才翻译为中文）
-        [SL, TL] = ["en", "zh-CN"]
-        for ch in query:
-            if u'\u4e00' <= ch <= u'\u9fff':
-                [SL, TL] = ["zh-CN", "en"]
-                break
-        # if re.search('[a-z]', query):
-
-        Jresponse = GoogleTranslate(query, SL, TL)
+        
+        # 识别语言
+        [SL, TL] = RecgLang(query)
+        # 翻译
+        Jresponse = GoogleTranslate(SL, TL, query)
 
         results = []
+        # 简单翻译
         results.append({
             "Title": Jresponse[0][0][0],
             "SubTitle": "复制到剪贴板",
@@ -42,12 +38,12 @@ class Gtranslate(Wox):
             },
         })
 
-        # 词
+        # 词(组)详情
         if Jresponse[1] != None:
             for item in Jresponse[1]:
                 prefix = item[0]
-                if prefix in PREFIX_DICT:
-                    prefix = PREFIX_DICT[prefix]
+                if prefix in DICT_PREFIX:
+                    prefix = DICT_PREFIX[prefix]
 
                 str = "%s.  %s" % (prefix,
                                    ", ".join(item[1][:(min(len(item[1]), ITEM_MAX_LEN))]))
@@ -66,14 +62,14 @@ class Gtranslate(Wox):
 
         return results
 
-    def openUrl(self, url):
-        webbrowser.open(url)
-
     def copy(self, ans):
         if flag:
             pyperclip.copy(ans)
         else:
             WoxAPI.change_query("ERROR: pacage pyperclip is not installed")
+
+    def openUrl(self, url):
+        webbrowser.open(url)
 
 
 if __name__ == "__main__":
