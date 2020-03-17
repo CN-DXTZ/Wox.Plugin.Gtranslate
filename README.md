@@ -18,7 +18,7 @@ wpm install Gtranslate/谷歌翻译
     ```
 
 ## usage
-![Gtranslate.gif](\Images\Gtranslate.gif)
+![Gtranslate.gif](/Images/Gtranslate.gif)
 1. input others language like en (english), translate to zh-CN (chinese)
 2. input zh-CN , translate to en
 3. you can click or enter to copy to your clipboard
@@ -44,7 +44,7 @@ it means:
 - `My_Language`翻译成`Obj_Language`
 
 #### 修改方法
-![Gtranslate.gif](\Images\config.gif)
+![Gtranslate.gif](/Images/config.gif)
 <!-- ![config.gif](https://cdn.jsdelivr.net/gh/CN-DXTZ/Blog-Img-Bed/PicGo/config.gif) -->
 - you can modify the config as the gif:
     1. input `tran _`
