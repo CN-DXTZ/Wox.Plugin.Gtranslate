@@ -5,9 +5,9 @@ from config import get_list, set_lang
 import webbrowser
 try:
     import pyperclip
-    flag = True
+    flag_package = True
 except ImportError:
-    flag = False
+    flag_package = False
 
 
 DICT_PREFIX = {"noun": "n", "verb": "v", "pronoun": "pron", "adjective": "adj",
@@ -113,10 +113,10 @@ class Gtranslate(Wox):
         return results
 
     def copy(self, ans):
-        if flag:
+        if flag_package:
             pyperclip.copy(ans)
         else:
-            WoxAPI.change_query("ERROR: pyperclip is not installed", True)
+            WoxAPI.change_query("tran ERROR: pyperclip is not installed", True)
 
     def openUrl(self, url):
         webbrowser.open(url)
@@ -126,9 +126,6 @@ class Gtranslate(Wox):
 
     def selectConfig(self, item):
         WoxAPI.change_query("{} {}".format(PREFIX_CONFIG, item), True)
-
-    def modifyConfig(self):
-        pass
 
 
 if __name__ == "__main__":
