@@ -41,6 +41,19 @@ class Gtranslate(Wox):
                 },
             })
 
+            # 打开浏览器查看详情
+            results.append({
+                "IcoPath": ICO_PATH,
+                "Title": "【Open Browser to View Details】",
+                "SubTitle": "打开浏览器查看谷歌翻译详情",
+                "JsonRPCAction": {
+                    "method": "openUrl",
+                    "parameters": ["https://translate.google.cn/#view=home&op=translate&sl={}&tl={}&text={}"
+                                   .format(SL, TL, query)],
+                    "dontHideAfterAction": False,
+                },
+            })
+
             # 词(组)详情
             if Jresponse[1] != None:
                 for item in Jresponse[1]:
@@ -53,11 +66,10 @@ class Gtranslate(Wox):
                     results.append({
                         "IcoPath": ICO_PATH,
                         "Title": str,
-                        "SubTitle": "浏览器查看详情",
+                        "SubTitle": "复制到剪贴板",
                         "JsonRPCAction": {
-                            "method": "openUrl",
-                            "parameters": ["https://translate.google.cn/#view=home&op=translate&sl={}&tl={}&text={}"
-                                           .format(SL, TL, query)],
+                            "method": "copy",
+                            "parameters": [str],
                             "dontHideAfterAction": False,
                         },
                     })

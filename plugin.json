@@ -4,7 +4,7 @@
     "Name": "Gtranslate/谷歌翻译",
     "Description": "Google Translate/谷歌英汉互译",
     "Author": "CN-DXTZ",
-    "Version": "1.1.0",
+    "Version": "1.2.1",
     "Language": "python",
     "Website": "https://github.com/CN-DXTZ/Wox.Plugin.Gtranslate",
     "IcoPath": "Images\\Gtranslate.png",
