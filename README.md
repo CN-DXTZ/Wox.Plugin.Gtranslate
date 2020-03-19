@@ -42,8 +42,8 @@ default json file as follows:
 {"My_Language": "zh-CN", "Obj_Language": "en"}
 ```
 it means:
-- 除`My_Language`外，任何语言翻译成`My_Language`
-- `My_Language`翻译成`Obj_Language`
+- other languages will translate to ` My_Language` except `My_Language`
+- `My_Language` will translate to `Obj_Language`
 
 #### modify config
 ![Gtranslate.gif](/Images/Gtranslate_config.gif)
