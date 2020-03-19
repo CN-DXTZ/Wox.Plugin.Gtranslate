@@ -7,21 +7,16 @@ BASE_URL = "https://translate.google.cn/translate_a/single"
 
 def GoogleTranslate(SL, TL, QUERY):
     TK = tk.tk(QUERY)
-
-    response = requests.get(BASE_URL + '''?client=t&hl=en
-                            &dt=t&dt=bd&dt=ss
-                            &sl={}&tl={}&tk={}&q={}'''
-                            .format(SL, TL, TK, QUERY))
-
+    tt = BASE_URL + "?client=t&hl=en&dt=t&dt=bd&sl={}&tl={}&tk={}&q={}"\
+        .format(SL, TL, TK, QUERY)
+    response = requests.get(tt)
     return response.json()
 
 
 def RecgLang(QUERY):
     TK = tk.tk(QUERY)
-    response = requests.get(url=BASE_URL,
-                            params={"client": "t",
-                                    "tk": TK, "q": QUERY,
-                                    "sl": "auto", "tl": "auto"})
+    response = requests.get(BASE_URL + "?client=t&sl=auto&tl=auto&tk={}&q={}"
+                            .format(TK, QUERY))
     re_lang = response.json()[2]
     my_lang = get_lang("My_Language")
     if re_lang != my_lang:
@@ -34,6 +29,7 @@ def RecgLang(QUERY):
 
 if __name__ == "__main__":
     print(GoogleTranslate("en", "zh-CN", "waste"))
+    print(GoogleTranslate("zh-CN", "en", "计划"))
     print(RecgLang("中文 Maximum number of shown per line"))
     print(RecgLang("每行顯示的最大數量"))
     print(RecgLang("Maximum number of shown per line"))

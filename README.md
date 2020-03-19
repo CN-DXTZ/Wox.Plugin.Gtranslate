@@ -5,12 +5,12 @@
 ```
 wpm install Gtranslate/谷歌翻译
 ```
-2. by Github (newest, but may be some bugs)
-    1. download or clone from:
+2. by Github (newest, but may be some bugs)  
+    download or clone from:
     ```
     https://github.com/CN-DXTZ/Wox.Plugin.Gtranslate.git
     ```
-    2. remove to:
+    remove to:
     ```
     %USERPROFILE%\AppData\Roaming\Wox\Plugins\
     ```
@@ -46,8 +46,8 @@ it means:
 - `My_Language`翻译成`Obj_Language`
 
 #### modify config
-![Gtranslate.gif](/Images/config.gif)
-<!-- <img src="https://cdn.jsdelivr.net/gh/CN-DXTZ/Blog-Img-Bed/PicGo/config.gif" width = "720" align=center /> -->
+![Gtranslate.gif](/Images/Gtranslate_config.gif)
+<!-- <img src="https://cdn.jsdelivr.net/gh/CN-DXTZ/Blog-Img-Bed/PicGo/Gtranslate_config.gif" width = "720" align=center /> -->
 - you can modify the config as the gif:
     1. input `tran _`
     2. then select or input completely: `tran _config` 

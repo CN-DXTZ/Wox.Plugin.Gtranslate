@@ -43,7 +43,7 @@ class Gtranslate(Wox):
 
             # 打开浏览器查看详情
             results.append({
-                "IcoPath": ICO_PATH,
+                "IcoPath": "Images/chrome.png",
                 "Title": "【Open Browser to View Details】",
                 "SubTitle": "打开浏览器查看谷歌翻译详情",
                 "JsonRPCAction": {
@@ -64,7 +64,7 @@ class Gtranslate(Wox):
                     str = "{}.  {}".format(prefix, ", ".join(
                         item[1][:(min(len(item[1]), ITEM_MAX_LEN))]))
                     results.append({
-                        "IcoPath": ICO_PATH,
+                        "IcoPath": "Images/dict.png",
                         "Title": str,
                         "SubTitle": "复制到剪贴板",
                         "JsonRPCAction": {
@@ -128,16 +128,16 @@ class Gtranslate(Wox):
         if flag_package:
             pyperclip.copy(ans)
         else:
-            WoxAPI.change_query("tran ERROR: pyperclip is not installed", True)
+            WoxAPI.change_query("tran ERROR: pyperclip is not installed")
 
     def openUrl(self, url):
         webbrowser.open(url)
 
     def openConfig(self):
-        WoxAPI.change_query(PREFIX_CONFIG, True)
+        WoxAPI.change_query(PREFIX_CONFIG)
 
     def selectConfig(self, item):
-        WoxAPI.change_query("{} {}".format(PREFIX_CONFIG, item), True)
+        WoxAPI.change_query("{} {}".format(PREFIX_CONFIG, item))
 
 
 if __name__ == "__main__":
