@@ -45,7 +45,7 @@ class Gtranslate(Wox):
             results.append({
                 "IcoPath": "Images/chrome.png",
                 "Title": "【Open Browser to View Details】",
-                "SubTitle": "打开浏览器查看谷歌翻译详情",
+                "SubTitle": "打开浏览器查看谷歌翻译详情: " + query,
                 "JsonRPCAction": {
                     "method": "openUrl",
                     "parameters": ["https://translate.google.cn/#view=home&op=translate&sl={}&tl={}&text={}"
