@@ -61,4 +61,4 @@ it means:
 
 ### custom development
 if you want continue to develop based on this plugin, you can refenence to this article —— 
-[开发 Wox.Plugin.Gtranslate](https://cn-dxtz.github.io/%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE/Wox/%E5%BC%80%E5%8F%91%20Wox.Plugin.Gtranslate/)
+[开发 Wox.Plugin.Gtranslate](https://cn-dxtz.github.io/开发%20Wox.Plugin.Gtranslate/)
